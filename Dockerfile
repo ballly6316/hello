@@ -1,6 +1,4 @@
-FROM centos
-RUN yum install httpd -y
-COPY index.html /var/www/html/
-
-CMD [“/usr/sbin/httpd”,” -D”,” FOREGROUND”]
+FROM ubuntu
+RUN sudo apt-get install apache2 -y
+CMD ["apachectl","-D","FOREGROUND"]
 EXPOSE 80
